@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Tracker — User Guide / 使い方ガイド</title>
+<style>
+:root{
+  --bg:#f5f0eb; --card:#fff; --primary:#6b8f71; --primary-dark:#557a5b;
+  --sleep:#7ba1c7; --feed:#e8a87c; --poo:#c4956a; --measure:#9b7ba7;
+  --text:#3a3a3a; --text-light:#777; --border:#e0dbd5; --shadow:0 2px 8px rgba(0,0,0,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding-bottom:40px}
+.header{background:var(--primary);color:#fff;padding:22px 18px;text-align:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.header h1{font-size:20px;font-weight:600}
+.header p{font-size:13px;opacity:.9;margin-top:3px}
+.lang-toggle{display:flex;justify-content:center;gap:0;margin:14px auto 0;max-width:240px;background:rgba(255,255,255,.2);border-radius:10px;overflow:hidden}
+.lang-toggle button{flex:1;border:none;background:transparent;color:rgba(255,255,255,.7);padding:7px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.lang-toggle button.active{background:rgba(255,255,255,.35);color:#fff}
+.wrap{max-width:640px;margin:0 auto;padding:16px}
+.card{background:var(--card);border-radius:14px;padding:18px 18px 6px;margin-bottom:14px;box-shadow:var(--shadow)}
+.card h2{font-size:17px;color:var(--primary-dark);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h3{font-size:14px;margin:12px 0 4px;color:var(--text)}
+.card p,.card li{font-size:14.5px;margin-bottom:8px}
+.card ol,.card ul{padding-left:22px}
+.card li{margin-bottom:6px}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:10px;color:#fff;margin-right:4px}
+.pill.sleep{background:var(--sleep)}.pill.feed{background:var(--feed)}.pill.poo{background:var(--poo)}.pill.measure{background:var(--measure)}.pill.note{background:#8e8e93}
+.tip{background:#eef3ee;border-left:3px solid var(--primary);padding:8px 12px;border-radius:0 8px 8px 0;font-size:13.5px;margin:8px 0}
+.foot{text-align:center;font-size:12px;color:var(--text-light);margin-top:18px;padding:0 16px}
+.jp{display:none}
+body.show-jp .en{display:none}
+body.show-jp .jp{display:block}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>👶 Baby Tracker</h1>
+  <p class="en">User Guide</p>
+  <p class="jp">使い方ガイド</p>
+  <div class="lang-toggle">
+    <button id="btnEn" class="active" onclick="setLang('en')">English</button>
+    <button id="btnJp" onclick="setLang('jp')">日本語</button>
+  </div>
+</div>
+<div class="wrap">
+
+  <!-- WHAT IS IT -->
+  <div class="card">
+    <div class="en">
+      <h2>💛 What is this?</h2>
+      <p>A simple, private app to track your baby's <b>sleep, feeding, diapers, growth, and notes</b>. It works on your phone like a normal app, and automatically syncs between both parents — log something on one phone and it appears on the other.</p>
+      <p>No account, no password, no app store. Just open the link and use it.</p>
+    </div>
+    <div class="jp">
+      <h2>💛 これは何？</h2>
+      <p>赤ちゃんの<b>睡眠・授乳・おむつ・成長・メモ</b>を記録できる、シンプルでプライベートなアプリです。普通のアプリのようにスマホで使え、両親のスマホ間で自動的に同期します。片方で記録すると、もう片方にも表示されます。</p>
+      <p>アカウント・パスワード・アプリストアは不要。リンクを開くだけで使えます。</p>
+    </div>
+  </div>
+
+  <!-- SETUP -->
+  <div class="card">
+    <div class="en">
+      <h2>🚀 First-time setup</h2>
+      <ol>
+        <li>Open the link your friend sent you.</li>
+        <li>Tap <b>⚙️ Settings</b> at the bottom of the screen.</li>
+        <li>Under <b>👶 Baby Profile</b>, type your baby's <b>name</b> and <b>birthdate</b>. It saves automatically and the app renames itself to your baby.</li>
+        <li>Optional: switch language (EN / 日本語) using the toggle at the top right of the app.</li>
+      </ol>
+      <h3>Add it to your home screen</h3>
+      <ul>
+        <li><b>iPhone (Safari):</b> tap the Share button → <i>Add to Home Screen</i>.</li>
+        <li><b>Android (Chrome):</b> tap ⋮ menu → <i>Add to Home screen</i>.</li>
+      </ul>
+      <div class="tip">Do this on <b>both</b> parents' phones — same link — and you'll both see the same, always up-to-date data.</div>
+    </div>
+    <div class="jp">
+      <h2>🚀 初期設定</h2>
+      <ol>
+        <li>送られてきたリンクを開きます。</li>
+        <li>画面下の <b>⚙️ 設定</b> をタップします。</li>
+        <li><b>👶 赤ちゃんプロフィール</b> で、赤ちゃんの<b>名前</b>と<b>誕生日</b>を入力します。自動保存され、アプリ名も赤ちゃんの名前に変わります。</li>
+        <li>任意：アプリ右上の切替で言語（EN / 日本語）を変更できます。</li>
+      </ol>
+      <h3>ホーム画面に追加</h3>
+      <ul>
+        <li><b>iPhone（Safari）:</b> 共有ボタン →〈ホーム画面に追加〉。</li>
+        <li><b>Android（Chrome）:</b> ⋮ メニュー →〈ホーム画面に追加〉。</li>
+      </ul>
+      <div class="tip">両親の<b>両方</b>のスマホで（同じリンクで）行えば、常に最新の同じデータを共有できます。</div>
+    </div>
+  </div>
+
+  <!-- LOGGING -->
+  <div class="card">
+    <div class="en">
+      <h2>📝 How to log things</h2>
+      <p>The big buttons at the top add an entry. Tap one, fill in the details, and save.</p>
+      <h3><span class="pill sleep">Sleep</span></h3>
+      <p>Tap when baby falls asleep — the app starts a timer. Tap again (or the banner) when they wake to log the full sleep. You can also enter times by hand.</p>
+      <h3><span class="pill feed">Feeding</span></h3>
+      <p>Choose a <b>Method</b>:</p>
+      <ul>
+        <li><b>Bottle</b> — amount in ml + type (formula / breast milk / mixed).</li>
+        <li><b>Breastfeed</b> — minutes on the breast + side (left / right / both).</li>
+        <li><b>Both</b> — breastfeeding <i>and</i> a top-up bottle in one entry.</li>
+      </ul>
+      <h3><span class="pill poo">Poo</span></h3>
+      <p>Log diapers with colour and whether there was pee too. The app gently flags colours worth mentioning to a doctor.</p>
+      <h3><span class="pill measure">Growth</span> <span class="pill note">Note</span></h3>
+      <p>Record weight & length over time, and jot notes — tag them as a Question, Concern, or Milestone for later.</p>
+    </div>
+    <div class="jp">
+      <h2>📝 記録のしかた</h2>
+      <p>上部の大きなボタンで記録を追加します。タップして内容を入力し、保存します。</p>
+      <h3><span class="pill sleep">睡眠</span></h3>
+      <p>寝たらタップするとタイマーが始まります。起きたらもう一度（またはバナーを）タップして睡眠を記録します。時刻を手入力することもできます。</p>
+      <h3><span class="pill feed">授乳</span></h3>
+      <p><b>方法</b>を選びます：</p>
+      <ul>
+        <li><b>哺乳瓶</b> — ml量＋種類（ミルク／母乳／混合）。</li>
+        <li><b>母乳</b> — 授乳した分数＋左右（左／右／両方）。</li>
+        <li><b>両方</b> — 母乳＋足し哺乳瓶を1つの記録で。</li>
+      </ul>
+      <h3><span class="pill poo">うんち</span></h3>
+      <p>色やおしっこの有無とともに記録します。医師に相談したほうがよい色はそっと知らせます。</p>
+      <h3><span class="pill measure">成長</span> <span class="pill note">メモ</span></h3>
+      <p>体重・身長の推移を記録し、メモを残せます。質問・心配・マイルストーンのタグ付けも可能です。</p>
+    </div>
+  </div>
+
+  <!-- INSIGHTS -->
+  <div class="card">
+    <div class="en">
+      <h2>📊 Summaries &amp; Trends</h2>
+      <ul>
+        <li><b>Cards at the top</b> show time since the last feed, sleep, and poo at a glance.</li>
+        <li><b>Totals</b> button — daily, last-24h, last-night, and weekly summaries.</li>
+        <li><b>Trends</b> button — charts of sleep, feeding (ml and/or breast minutes), and growth over time.</li>
+        <li><b>Report</b> button — a tidy summary you can copy to share with a doctor.</li>
+      </ul>
+      <div class="tip">The charts adapt to how you feed: bottle families see ml, breastfeeding families see minutes, and mixed families see both.</div>
+    </div>
+    <div class="jp">
+      <h2>📊 サマリー＆トレンド</h2>
+      <ul>
+        <li><b>上部のカード</b>で、最後の授乳・睡眠・うんちからの経過時間がひと目で分かります。</li>
+        <li><b>集計</b>ボタン — 1日・過去24時間・昨夜・週間のサマリー。</li>
+        <li><b>トレンド</b>ボタン — 睡眠・授乳（ml／母乳の分数）・成長の推移グラフ。</li>
+        <li><b>レポート</b>ボタン — 医師と共有しやすい形にコピーできるサマリー。</li>
+      </ul>
+      <div class="tip">グラフは授乳方法に合わせて変化します：哺乳瓶ならml、母乳なら分数、混合なら両方を表示します。</div>
+    </div>
+  </div>
+
+  <!-- PRIVACY -->
+  <div class="card">
+    <div class="en">
+      <h2>🔒 A note on privacy</h2>
+      <p>Your baby's data is kept on a private link that only you have. There's no public sign-up. Please don't share your app link beyond the people you want to have access.</p>
+    </div>
+    <div class="jp">
+      <h2>🔒 プライバシーについて</h2>
+      <p>赤ちゃんのデータは、あなただけが持つプライベートなリンクに保存されます。一般公開の登録はありません。アクセスを許可したい人以外には、アプリのリンクを共有しないでください。</p>
+    </div>
+  </div>
+
+  <p class="foot en">Made with love. Questions? Just ask the friend who sent this to you. 💛</p>
+  <p class="foot jp">心を込めて。ご不明な点は、これを送ってくれたお友達に聞いてください。💛</p>
+</div>
+
+<script>
+function setLang(l){
+  document.body.classList.toggle('show-jp', l==='jp');
+  document.getElementById('btnEn').classList.toggle('active', l==='en');
+  document.getElementById('btnJp').classList.toggle('active', l==='jp');
+  document.documentElement.lang = l==='jp' ? 'ja' : 'en';
+  try{ localStorage.setItem('manual_lang', l); }catch(e){}
+}
+// Default to device language, or last choice
+(function(){
+  var saved; try{ saved = localStorage.getItem('manual_lang'); }catch(e){}
+  var l = saved || ((navigator.language||'').toLowerCase().startsWith('ja') ? 'jp' : 'en');
+  setLang(l);
+})();
+</script>
+</body>
+</html>
