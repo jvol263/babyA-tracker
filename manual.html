@@ -19,15 +19,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .lang-toggle button{flex:1;border:none;background:transparent;color:rgba(255,255,255,.7);padding:7px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
 .lang-toggle button.active{background:rgba(255,255,255,.35);color:#fff}
 .wrap{max-width:640px;margin:0 auto;padding:16px}
-.card{background:var(--card);border-radius:14px;padding:18px 18px 6px;margin-bottom:14px;box-shadow:var(--shadow)}
-.card h2{font-size:17px;color:var(--primary-dark);margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.card h3{font-size:14px;margin:12px 0 4px;color:var(--text)}
+.card{background:var(--card);border-radius:14px;padding:18px 18px 8px;margin-bottom:14px;box-shadow:var(--shadow)}
+.card h2{font-size:17px;color:var(--primary-dark);margin-bottom:10px;display:flex;align-items:center;gap:8px;line-height:1.3}
+.card h3{font-size:14.5px;margin:14px 0 4px;color:var(--text)}
 .card p,.card li{font-size:14.5px;margin-bottom:8px}
 .card ol,.card ul{padding-left:22px}
 .card li{margin-bottom:6px}
-.pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:10px;color:#fff;margin-right:4px}
+.lead{font-size:15px}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:10px;color:#fff;margin-right:2px;white-space:nowrap}
 .pill.sleep{background:var(--sleep)}.pill.feed{background:var(--feed)}.pill.poo{background:var(--poo)}.pill.measure{background:var(--measure)}.pill.note{background:#8e8e93}
-.tip{background:#eef3ee;border-left:3px solid var(--primary);padding:8px 12px;border-radius:0 8px 8px 0;font-size:13.5px;margin:8px 0}
+.tip{background:#eef3ee;border-left:3px solid var(--primary);padding:9px 12px;border-radius:0 8px 8px 0;font-size:13.5px;margin:10px 0}
+.when{background:#fbf6ee;border-left:3px solid var(--feed);padding:9px 12px;border-radius:0 8px 8px 0;font-size:13.5px;margin:8px 0}
+.when b{color:var(--primary-dark)}
+.uc{display:flex;gap:11px;align-items:flex-start;margin-bottom:13px}
+.uc .ico{font-size:23px;line-height:1.2;flex-shrink:0;width:30px;text-align:center}
+.uc .txt{font-size:14px}
+.uc .txt b{display:block;margin-bottom:1px}
+.divider{height:1px;background:var(--border);margin:14px 0}
 .foot{text-align:center;font-size:12px;color:var(--text-light);margin-top:18px;padding:0 16px}
 .jp{display:none}
 body.show-jp .en{display:none}
@@ -46,125 +54,237 @@ body.show-jp .jp{display:block}
 </div>
 <div class="wrap">
 
-  <!-- WHAT IS IT -->
+  <!-- 1. WHAT IS IT / WHY -->
   <div class="card">
     <div class="en">
-      <h2>💛 What is this?</h2>
-      <p>A simple, private app to track your baby's <b>sleep, feeding, diapers, growth, and notes</b>. It works on your phone like a normal app, and automatically syncs between both parents — log something on one phone and it appears on the other.</p>
+      <h2>💛 What is this, and how does it help?</h2>
+      <p class="lead">A simple, private app to track your baby's <b>sleep, feeding, diapers, growth, and notes</b> — and the magic is that it <b>syncs between both parents' phones automatically</b>.</p>
+      <p>In the haze of newborn life, it quietly answers the questions you ask all day:</p>
+      <ul>
+        <li>"When did the baby last eat — and how much?"</li>
+        <li>"Whose turn is it, and how long since the last nap?"</li>
+        <li>"Is this normal? Are things getting better?"</li>
+      </ul>
       <p>No account, no password, no app store. Just open the link and use it.</p>
     </div>
     <div class="jp">
-      <h2>💛 これは何？</h2>
-      <p>赤ちゃんの<b>睡眠・授乳・おむつ・成長・メモ</b>を記録できる、シンプルでプライベートなアプリです。普通のアプリのようにスマホで使え、両親のスマホ間で自動的に同期します。片方で記録すると、もう片方にも表示されます。</p>
+      <h2>💛 これは何？どう役立つの？</h2>
+      <p class="lead">赤ちゃんの<b>睡眠・授乳・おむつ・成長・メモ</b>を記録できる、シンプルでプライベートなアプリです。いちばんの魅力は、<b>両親のスマホ間で自動的に同期する</b>こと。</p>
+      <p>慌ただしい新生児期に、一日中くり返す疑問にそっと答えてくれます：</p>
+      <ul>
+        <li>「最後に飲んだのはいつ？どれくらい？」</li>
+        <li>「今どっちの番？前のお昼寝からどれくらい経った？」</li>
+        <li>「これって普通？ちゃんと良くなってる？」</li>
+      </ul>
       <p>アカウント・パスワード・アプリストアは不要。リンクを開くだけで使えます。</p>
     </div>
   </div>
 
-  <!-- SETUP -->
+  <!-- 2. SETUP -->
   <div class="card">
     <div class="en">
-      <h2>🚀 First-time setup</h2>
+      <h2>🚀 Getting started</h2>
       <ol>
         <li>Open the link your friend sent you.</li>
-        <li>Tap <b>⚙️ Settings</b> at the bottom of the screen.</li>
-        <li>Under <b>👶 Baby Profile</b>, type your baby's <b>name</b> and <b>birthdate</b>. It saves automatically and the app renames itself to your baby.</li>
-        <li>Optional: switch language (EN / 日本語) using the toggle at the top right of the app.</li>
+        <li>Tap <b>⚙️ Settings</b> at the bottom.</li>
+        <li>Under <b>👶 Baby Profile</b>, enter your baby's <b>name</b> and <b>birthdate</b>. It saves automatically, renames the app to your baby, and starts showing their age in the header.</li>
+        <li>Optional: switch language (EN / 日本語) with the toggle at the top-right of the app.</li>
       </ol>
-      <h3>Add it to your home screen</h3>
+      <h3>Add it to your home screen (so it feels like a real app)</h3>
       <ul>
-        <li><b>iPhone (Safari):</b> tap the Share button → <i>Add to Home Screen</i>.</li>
-        <li><b>Android (Chrome):</b> tap ⋮ menu → <i>Add to Home screen</i>.</li>
+        <li><b>iPhone (Safari):</b> Share button → <i>Add to Home Screen</i>.</li>
+        <li><b>Android (Chrome):</b> ⋮ menu → <i>Add to Home screen</i>.</li>
       </ul>
-      <div class="tip">Do this on <b>both</b> parents' phones — same link — and you'll both see the same, always up-to-date data.</div>
+      <div class="tip">📱 Do this on <b>both</b> parents' phones using the <b>same link</b>. Whatever one of you logs shows up on the other's phone within seconds — one shared, always-current record.</div>
     </div>
     <div class="jp">
-      <h2>🚀 初期設定</h2>
+      <h2>🚀 はじめかた</h2>
       <ol>
         <li>送られてきたリンクを開きます。</li>
-        <li>画面下の <b>⚙️ 設定</b> をタップします。</li>
-        <li><b>👶 赤ちゃんプロフィール</b> で、赤ちゃんの<b>名前</b>と<b>誕生日</b>を入力します。自動保存され、アプリ名も赤ちゃんの名前に変わります。</li>
+        <li>下の <b>⚙️ 設定</b> をタップします。</li>
+        <li><b>👶 赤ちゃんプロフィール</b> で、<b>名前</b>と<b>誕生日</b>を入力します。自動保存され、アプリ名が赤ちゃんの名前に変わり、ヘッダーに月齢が表示されます。</li>
         <li>任意：アプリ右上の切替で言語（EN / 日本語）を変更できます。</li>
       </ol>
-      <h3>ホーム画面に追加</h3>
+      <h3>ホーム画面に追加（本物のアプリのように）</h3>
       <ul>
         <li><b>iPhone（Safari）:</b> 共有ボタン →〈ホーム画面に追加〉。</li>
         <li><b>Android（Chrome）:</b> ⋮ メニュー →〈ホーム画面に追加〉。</li>
       </ul>
-      <div class="tip">両親の<b>両方</b>のスマホで（同じリンクで）行えば、常に最新の同じデータを共有できます。</div>
+      <div class="tip">📱 両親の<b>両方</b>のスマホで、<b>同じリンク</b>で行ってください。片方が記録すると数秒でもう片方にも反映され、常に最新の同じ記録を共有できます。</div>
     </div>
   </div>
 
-  <!-- LOGGING -->
+  <!-- 3. EVERYDAY LOGGING -->
   <div class="card">
     <div class="en">
-      <h2>📝 How to log things</h2>
-      <p>The big buttons at the top add an entry. Tap one, fill in the details, and save.</p>
+      <h2>📝 Everyday logging</h2>
+      <p>The big buttons at the top add entries. Tap one, fill in the details, save. The three cards just below them always show <b>time since the last feed, sleep, and poo</b> at a glance.</p>
       <h3><span class="pill sleep">Sleep</span></h3>
-      <p>Tap when baby falls asleep — the app starts a timer. Tap again (or the banner) when they wake to log the full sleep. You can also enter times by hand.</p>
+      <p>Tap when baby falls asleep — a timer starts and a banner shows "sleeping since…". Tap the banner when they wake to log the full stretch. (You can also type times by hand, or fix a forgotten one later.)</p>
       <h3><span class="pill feed">Feeding</span></h3>
-      <p>Choose a <b>Method</b>:</p>
+      <p>Pick a <b>Method</b> — this is what makes the app flexible for any feeding journey:</p>
       <ul>
         <li><b>Bottle</b> — amount in ml + type (formula / breast milk / mixed).</li>
-        <li><b>Breastfeed</b> — minutes on the breast + side (left / right / both).</li>
-        <li><b>Both</b> — breastfeeding <i>and</i> a top-up bottle in one entry.</li>
+        <li><b>Breastfeed</b> — minutes on the breast + side (left / right / both). No need to guess ml.</li>
+        <li><b>Both</b> — breastfeeding <i>and</i> a top-up bottle in a single entry, for combination feeding.</li>
       </ul>
       <h3><span class="pill poo">Poo</span></h3>
-      <p>Log diapers with colour and whether there was pee too. The app gently flags colours worth mentioning to a doctor.</p>
-      <h3><span class="pill measure">Growth</span> <span class="pill note">Note</span></h3>
-      <p>Record weight & length over time, and jot notes — tag them as a Question, Concern, or Milestone for later.</p>
+      <p>Log diapers with colour, and whether there was pee too.</p>
+      <h3><span class="pill measure">Growth</span> &nbsp; <span class="pill note">Note</span></h3>
+      <p>Record weight &amp; length at check-ups, and jot anything to remember — tag a note as a <b>Question</b>, <b>Concern</b>, or <b>Milestone</b> so it's easy to find later.</p>
     </div>
     <div class="jp">
-      <h2>📝 記録のしかた</h2>
-      <p>上部の大きなボタンで記録を追加します。タップして内容を入力し、保存します。</p>
+      <h2>📝 毎日の記録</h2>
+      <p>上部の大きなボタンで記録を追加します。タップして内容を入力し、保存。すぐ下の3つのカードには、<b>最後の授乳・睡眠・うんちからの経過時間</b>が常にひと目で表示されます。</p>
       <h3><span class="pill sleep">睡眠</span></h3>
-      <p>寝たらタップするとタイマーが始まります。起きたらもう一度（またはバナーを）タップして睡眠を記録します。時刻を手入力することもできます。</p>
+      <p>寝たらタップ — タイマーが始まり「〇時から睡眠中」とバナーが出ます。起きたらバナーをタップして睡眠時間を記録。時刻の手入力や、あとから修正もできます。</p>
       <h3><span class="pill feed">授乳</span></h3>
-      <p><b>方法</b>を選びます：</p>
+      <p><b>方法</b>を選びます — これがどんな授乳スタイルにも対応できる理由です：</p>
       <ul>
         <li><b>哺乳瓶</b> — ml量＋種類（ミルク／母乳／混合）。</li>
-        <li><b>母乳</b> — 授乳した分数＋左右（左／右／両方）。</li>
-        <li><b>両方</b> — 母乳＋足し哺乳瓶を1つの記録で。</li>
+        <li><b>母乳</b> — 授乳した分数＋左右（左／右／両方）。ml量を推測する必要なし。</li>
+        <li><b>両方</b> — 母乳＋足し哺乳瓶を1つの記録で（混合栄養向け）。</li>
       </ul>
       <h3><span class="pill poo">うんち</span></h3>
-      <p>色やおしっこの有無とともに記録します。医師に相談したほうがよい色はそっと知らせます。</p>
-      <h3><span class="pill measure">成長</span> <span class="pill note">メモ</span></h3>
-      <p>体重・身長の推移を記録し、メモを残せます。質問・心配・マイルストーンのタグ付けも可能です。</p>
+      <p>色や、おしっこの有無とともに記録します。</p>
+      <h3><span class="pill measure">成長</span> &nbsp; <span class="pill note">メモ</span></h3>
+      <p>健診での体重・身長を記録し、覚えておきたいことをメモ。<b>質問</b>・<b>心配</b>・<b>マイルストーン</b>のタグを付けると、あとで見つけやすくなります。</p>
     </div>
   </div>
 
-  <!-- INSIGHTS -->
+  <!-- 4. USE CASES -->
   <div class="card">
     <div class="en">
-      <h2>📊 Summaries &amp; Trends</h2>
-      <ul>
-        <li><b>Cards at the top</b> show time since the last feed, sleep, and poo at a glance.</li>
-        <li><b>Totals</b> button — daily, last-24h, last-night, and weekly summaries.</li>
-        <li><b>Trends</b> button — charts of sleep, feeding (ml and/or breast minutes), and growth over time.</li>
-        <li><b>Report</b> button — a tidy summary you can copy to share with a doctor.</li>
-      </ul>
-      <div class="tip">The charts adapt to how you feed: bottle families see ml, breastfeeding families see minutes, and mixed families see both.</div>
+      <h2>✨ Where it really helps</h2>
+      <div class="uc"><div class="ico">🌙</div><div class="txt"><b>The 3am question</b>"Was that last feed at 1 or 2am? Whose turn is it?" The cards at the top answer instantly — no waking each other to ask.</div></div>
+      <div class="uc"><div class="ico">👩‍❤️‍👨</div><div class="txt"><b>Two parents, one source of truth</b>No more "did you write it down?" You both see the same live log, so hand-offs are seamless.</div></div>
+      <div class="uc"><div class="ico">👵</div><div class="txt"><b>Handing off to a caregiver</b>A grandparent or sitter can glance at the routine and log feeds/naps while you're out — and you can check in from your phone.</div></div>
+      <div class="uc"><div class="ico">🩺</div><div class="txt"><b>Pediatrician visits</b>Arrive with real numbers, not guesses. The growth charts plus the one-tap <b>Report</b> give the doctor exactly what they ask for.</div></div>
+      <div class="uc"><div class="ico">📈</div><div class="txt"><b>Seeing the rhythm form</b><b>Trends</b> show whether nights are getting longer and feeds bigger — reassuring proof that your hard work is paying off.</div></div>
     </div>
     <div class="jp">
-      <h2>📊 サマリー＆トレンド</h2>
-      <ul>
-        <li><b>上部のカード</b>で、最後の授乳・睡眠・うんちからの経過時間がひと目で分かります。</li>
-        <li><b>集計</b>ボタン — 1日・過去24時間・昨夜・週間のサマリー。</li>
-        <li><b>トレンド</b>ボタン — 睡眠・授乳（ml／母乳の分数）・成長の推移グラフ。</li>
-        <li><b>レポート</b>ボタン — 医師と共有しやすい形にコピーできるサマリー。</li>
-      </ul>
-      <div class="tip">グラフは授乳方法に合わせて変化します：哺乳瓶ならml、母乳なら分数、混合なら両方を表示します。</div>
+      <h2>✨ いちばん役立つ場面</h2>
+      <div class="uc"><div class="ico">🌙</div><div class="txt"><b>夜中3時の疑問</b>「最後の授乳は1時？2時？今どっちの番？」上部のカードが即答してくれるので、相手を起こして聞かずに済みます。</div></div>
+      <div class="uc"><div class="ico">👩‍❤️‍👨</div><div class="txt"><b>ふたりで、ひとつの正しい記録</b>「メモした？」のやり取りはもう不要。同じ記録をリアルタイムで共有でき、交代もスムーズです。</div></div>
+      <div class="uc"><div class="ico">👵</div><div class="txt"><b>祖父母やシッターへの引き継ぎ</b>留守中も、リズムを見ながら授乳やお昼寝を記録してもらえます。あなたは自分のスマホで確認できます。</div></div>
+      <div class="uc"><div class="ico">🩺</div><div class="txt"><b>小児科の受診</b>推測ではなく実際の数字を持って行けます。成長グラフとワンタップの<b>レポート</b>で、医師が知りたい情報をそのまま渡せます。</div></div>
+      <div class="uc"><div class="ico">📈</div><div class="txt"><b>リズムができていくのが見える</b><b>トレンド</b>で、夜の睡眠が長くなり授乳量が増えていく様子が分かります。日々の頑張りが実を結んでいる証拠です。</div></div>
     </div>
   </div>
 
-  <!-- PRIVACY -->
+  <!-- 5. SMART HELPERS (ON/OFF) -->
   <div class="card">
     <div class="en">
-      <h2>🔒 A note on privacy</h2>
-      <p>Your baby's data is kept on a private link that only you have. There's no public sign-up. Please don't share your app link beyond the people you want to have access.</p>
+      <h2>🔔 Optional helpers — turn on what you need</h2>
+      <p>These live in <b>⚙️ Settings</b> (and at the top of the screen). All are off/optional — switch them on when they help, off when they don't.</p>
+
+      <h3>🍼 Feed reminder &nbsp;·&nbsp; 💩 Poo reminder</h3>
+      <p>In <b>Settings → Reminders</b>. A gentle banner appears once it's been longer than the time you choose since the last feed (2.5–4.5h) or poo (12–72h).</p>
+      <div class="when"><b>When to turn ON:</b> early weeks, when newborns should feed every ~2–3 hours even overnight — set the feed reminder to ~3h so an overdue feed gets a nudge. The poo reminder (try 24–48h) is a handy "constipation watch."<br><b>When to turn OFF:</b> once feeding is established or on-demand, or any time the nudges add stress instead of helping. Just set them back to <i>Off</i>.</div>
+
+      <h3>⏱️ Formula safety timers</h3>
+      <p>Two optional buttons sit just under the quick-add buttons:</p>
+      <ul>
+        <li><b>Bottle Made (2h):</b> tap right after preparing a bottle. A countdown banner shows the safe-use window — it turns amber with 30 min left and red when the 2 hours are up.</li>
+        <li><b>Feeding Started (1h):</b> tap when baby begins drinking; a started bottle is generally good for about an hour. It warns at 15 min left.</li>
+      </ul>
+      <div class="when"><b>When to use:</b> bottle/formula feeding, especially night feeds when it's easy to lose track of time. Tap the ✖ on the banner to clear a timer. <b>Skip them entirely</b> if you breastfeed exclusively.</div>
+
+      <h3>🔧 Defaults</h3>
+      <p>In <b>Settings → Defaults</b>, set your most common <b>feed type</b> and <b>diaper colour</b>. The entry form opens pre-filled with these, so logging the usual case is one or two taps.</p>
     </div>
     <div class="jp">
-      <h2>🔒 プライバシーについて</h2>
-      <p>赤ちゃんのデータは、あなただけが持つプライベートなリンクに保存されます。一般公開の登録はありません。アクセスを許可したい人以外には、アプリのリンクを共有しないでください。</p>
+      <h2>🔔 任意の便利機能 — 必要なものだけON</h2>
+      <p>これらは <b>⚙️ 設定</b>（および画面上部）にあります。すべて任意なので、役立つときにON、不要ならOFFにできます。</p>
+
+      <h3>🍼 授乳リマインダー &nbsp;·&nbsp; 💩 うんちリマインダー</h3>
+      <p><b>設定 → リマインダー</b> にあります。最後の授乳（2.5〜4.5時間）やうんち（12〜72時間）から、選んだ時間を過ぎると、やさしいバナーが表示されます。</p>
+      <div class="when"><b>ONにするとき：</b>新生児期、夜間も約2〜3時間ごとの授乳が必要な時期。授乳リマインダーを約3時間にすると、授乳が遅れたときに知らせてくれます。うんちリマインダー（24〜48時間がおすすめ）は便利な「便秘の見守り」になります。<br><b>OFFにするとき：</b>授乳が軌道に乗った／欲しがるときに与える方式になったとき、または通知が負担に感じるとき。<i>オフ</i>に戻すだけです。</div>
+
+      <h3>⏱️ ミルクの安全タイマー</h3>
+      <p>クイック追加ボタンのすぐ下に、任意の2つのボタンがあります：</p>
+      <ul>
+        <li><b>ミルク作成（2時間）:</b> 調乳直後にタップ。安全に使える時間をカウントダウンし、残り30分で黄色、2時間経過で赤になります。</li>
+        <li><b>授乳開始（1時間）:</b> 飲み始めにタップ。飲み始めた哺乳瓶は約1時間が目安です。残り15分で警告します。</li>
+      </ul>
+      <div class="when"><b>使う場面：</b>哺乳瓶・ミルク育児、特に時間を見失いがちな夜間。バナーの ✖ でタイマーを消せます。<b>完全母乳の場合は使わなくてOK</b>です。</div>
+
+      <h3>🔧 デフォルト設定</h3>
+      <p><b>設定 → デフォルト</b> で、よく使う<b>授乳の種類</b>と<b>おむつの色</b>を設定。入力フォームが最初からその値で開くので、いつものケースは1〜2タップで記録できます。</p>
+    </div>
+  </div>
+
+  <!-- 6. PAUSING / TRACKING -->
+  <div class="card">
+    <div class="en">
+      <h2>⏸️ Pausing what you track</h2>
+      <p>You don't have to track everything forever. In <b>Settings → Tracking</b>, each category (sleep, feeding, diapers, growth) can be paused.</p>
+      <h3>How</h3>
+      <ul>
+        <li>Pick a date and tap <b>Pause</b> to stop. Pick a date and tap <b>Resume</b> to start again.</li>
+        <li>While paused, that category's quick-add button dims with a ⏸ mark, and the app stops nudging you about it.</li>
+        <li>Importantly, paused days are <b>left out of your averages and trends</b>, so the numbers stay meaningful instead of showing gaps as zeros.</li>
+      </ul>
+      <div class="when"><b>Why you'd want to:</b> maybe you stop logging every nap once sleep settles but keep tracking feeds; or you pause everything during a holiday; or you only care about growth now. Pausing keeps your stats honest.</div>
+      <div class="tip">Just one odd day to ignore (a sick day, travel, a day you forgot)? In the <b>Weekly</b> summary, tap the ✓/✗ next to that day to exclude it from the weekly averages — no need to pause the whole category.</div>
+    </div>
+    <div class="jp">
+      <h2>⏸️ 記録する項目を一時停止</h2>
+      <p>すべてをずっと記録し続ける必要はありません。<b>設定 → トラッキング</b> で、各カテゴリー（睡眠・授乳・おむつ・成長）を一時停止できます。</p>
+      <h3>やり方</h3>
+      <ul>
+        <li>日付を選んで <b>停止</b> でストップ。日付を選んで <b>再開</b> で再スタート。</li>
+        <li>停止中は、そのカテゴリーのクイック追加ボタンが ⏸ 付きで薄くなり、通知も止まります。</li>
+        <li>重要：停止した日は<b>平均やトレンドから除外</b>されるので、空白がゼロとして表示されて数字が崩れることがありません。</li>
+      </ul>
+      <div class="when"><b>使いたい理由：</b>睡眠が安定したらお昼寝の記録はやめて授乳だけ続ける、旅行中はすべて止める、今は成長だけ見たい——など。停止することで統計が正確に保たれます。</div>
+      <div class="tip">無視したい日が1日だけ（病気・旅行・記録し忘れ）なら、<b>週間</b>サマリーでその日の横の ✓/✗ をタップして週平均から除外できます。カテゴリー全体を止める必要はありません。</div>
+    </div>
+  </div>
+
+  <!-- 7. INSIGHTS -->
+  <div class="card">
+    <div class="en">
+      <h2>📊 Summaries, Trends &amp; Doctor Report</h2>
+      <p>Three buttons at the bottom turn your logs into something useful:</p>
+      <ul>
+        <li><b>Totals</b> — daily, last-24h, last-night, and weekly summaries (total sleep, feeds, diapers, and more).</li>
+        <li><b>Trends</b> — charts over time for sleep (day vs night), feeding, and growth. The feeding chart adapts to you: <b>ml</b> for bottle, <b>minutes</b> for breastfeeding, or both for combination feeding.</li>
+        <li><b>Report</b> — pick a date range and copy a tidy summary to share with your doctor: average daily feeds, volumes/breast time, sleep, diapers, growth, and the notes you flagged.</li>
+      </ul>
+      <div class="tip">Before a check-up, open <b>Report</b>, set the range to since your last visit, and copy it into a message or read it out — instant, accurate answers to "how's feeding/sleeping been?"</div>
+    </div>
+    <div class="jp">
+      <h2>📊 サマリー・トレンド・医師向けレポート</h2>
+      <p>下部の3つのボタンが、記録を役立つ形に変えます：</p>
+      <ul>
+        <li><b>集計</b> — 1日・過去24時間・昨夜・週間のサマリー（合計睡眠、授乳、おむつなど）。</li>
+        <li><b>トレンド</b> — 睡眠（昼夜別）・授乳・成長の推移グラフ。授乳グラフは自動で変化します：哺乳瓶なら<b>ml</b>、母乳なら<b>分数</b>、混合なら両方。</li>
+        <li><b>レポート</b> — 期間を選んで、医師と共有できるサマリーをコピー：1日平均の授乳回数・量／母乳時間、睡眠、おむつ、成長、タグ付けしたメモ。</li>
+      </ul>
+      <div class="tip">健診の前に <b>レポート</b> を開き、前回受診からの期間に設定してコピーすれば、「授乳や睡眠の調子は？」に正確に即答できます。</div>
+    </div>
+  </div>
+
+  <!-- 8. SAFETY + DATA -->
+  <div class="card">
+    <div class="en">
+      <h2>🩺 Health flags, data &amp; privacy</h2>
+      <h3>Gentle health reminders</h3>
+      <p>If you log a <b>white, red, or black</b> diaper, the app shows a gentle note that these colours are worth mentioning to your doctor. It's a prompt, not a diagnosis — every other colour logs normally.</p>
+      <h3>Your data</h3>
+      <p>Everything syncs and is saved automatically. From <b>Settings → Data</b> you can <b>Export CSV</b> to keep your own backup or open the records in a spreadsheet.</p>
+      <h3>Privacy</h3>
+      <p>Your baby's data lives on a private link that only you have — no public sign-up. Please don't share your app link beyond the people you want to have access.</p>
+    </div>
+    <div class="jp">
+      <h2>🩺 健康の注意表示・データ・プライバシー</h2>
+      <h3>やさしい健康リマインダー</h3>
+      <p><b>白・赤・黒</b>のおむつを記録すると、これらの色は医師に相談したほうがよい、とそっと知らせます。診断ではなく注意喚起です。その他の色は通常どおり記録されます。</p>
+      <h3>データについて</h3>
+      <p>すべて自動で同期・保存されます。<b>設定 → データ</b> から <b>CSVエクスポート</b> で、自分用のバックアップを取ったり、表計算ソフトで記録を開いたりできます。</p>
+      <h3>プライバシー</h3>
+      <p>赤ちゃんのデータは、あなただけが持つプライベートなリンクに保存されます（一般公開の登録なし）。アクセスを許可したい人以外には、アプリのリンクを共有しないでください。</p>
     </div>
   </div>
 
@@ -180,7 +300,6 @@ function setLang(l){
   document.documentElement.lang = l==='jp' ? 'ja' : 'en';
   try{ localStorage.setItem('manual_lang', l); }catch(e){}
 }
-// Default to device language, or last choice
 (function(){
   var saved; try{ saved = localStorage.getItem('manual_lang'); }catch(e){}
   var l = saved || ((navigator.language||'').toLowerCase().startsWith('ja') ? 'jp' : 'en');
